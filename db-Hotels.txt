@@ -17,13 +17,13 @@ dell’esecuzione della query)
 	SELECT SUM(`price`) FROM `pagamenti` WHERE `status` = 'accepted'
 
 6. Qual è il prezzo massimo pagato?
-	SELECT SUM(`price`) FROM `pagamenti` WHERE `status` = 'accepted'
+	SELECT MAX(`price`) FROM `pagamenti` WHERE `status` = 'accepted'
 
 7. Seleziona gli ospiti riconosciuti con patente e nati nel 1975
 	SELECT * FROM `ospiti` WHERE `document_type` = 'Driver License' AND YEAR(date_of_birth) = 1975
 
 8. Quanti paganti sono anche ospiti?
-	SELECT * FROM `paganti` WHERE `ospite_id` <> 'NULL'
+	SELECT COUNT(`id`) FROM `paganti` WHERE `ospite_id` <> 'NULL';
 
 9. Quanti posti letto ha l’hotel in totale?
 	SELECT COUNT('beds') FROM `stanze`
